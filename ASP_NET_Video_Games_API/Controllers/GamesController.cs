@@ -17,11 +17,11 @@ namespace ASP_NET_Video_Games_API.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetPublishers()
+        public IActionResult GetAllGames()
         {
-            var VideoGamePublishers = _context.VideoGames.Select(vg => vg.Publisher).Distinct();
+            var VideoGames = _context.VideoGames.Select(vg => vg).Distinct();
 
-            return Ok(VideoGamePublishers);
+            return Ok(VideoGames);
         }
 
         [HttpGet("{id}")]
